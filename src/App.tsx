@@ -1,42 +1,18 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import logo from './logo.svg';
 import './App.css';
-// import Test1 from './components/Test-1';
-// import Test2 from './components/Test-2';
-// import Test3 from './components/Test-3';
-import TodoForm from './components/TodoForm';
-import {TodoFormProps} from './components/TodoForm'
-import TodoList from './components/TodoList';
-
-export interface TodoProps{
-  id:number,
-  todo:string
-}
+import Heading from './components/Heading';
+import Button from './components/Button';
 
 function App() {
+  const [name,setName]=useState<string>("avinash")
+  const inputRef=useRef<string|number>("")
 
-  const [alertBox,setAlertBox] =useState<boolean>(false)
-  const [todo,setTodo] = useState<TodoProps>({id:0,todo:''})
-
-  const [todoList, setTodoList] = useState<TodoProps[] |{}>({});
-
-//  const eventFunction = () => {
-//     setAlertBox(!alertBox)                        
-//     alert('Alert Box Toggled')
-//   }
-  
-
-  
+  const [welcomeMessage,setWelcomeMessage]=useState<string>("")
   return (
     <div className="App">
-      {/* <Test1/>
-      <Test2/> */}
-      {/* <Test3 toggleStatus={alertBox} eventFunction={eventFunction}/> */}
-      <h2>Todo list</h2>
-
-      
-      {/* <TodoForm todo={todo} />
-      <TodoList todoList={todoList} /> */}
-      
+     <Heading name={name} setName={setName}/>
+     <Button color='green' setWelcomeMessage={setWelcomeMessage}>submit</Button>
     </div>
   );
 }
