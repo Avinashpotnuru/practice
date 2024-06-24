@@ -34,14 +34,22 @@ function App() {
     setTodos(todoList.filter((item) => item.id !== id));
   };
 
+  const toggleTodo = (id: number) => {
+    setTodos(todoList.map((item) => (item.id === id ? {...item,isComplete:!item.isComplete} : item)));
+  };
+
   return (
-    <div className="App">
+    <div className="bg-todo-bg h-screen w-screen bg-cover flex justify-center items-center flex-col">
       {/* <Heading name={name} setName={setName}/>
      <Button color='green' setWelcomeMessage={setWelcomeMessage}>submit</Button> */}
       <h1>todolist</h1>
       {/* <h1>{todo}</h1> */}
       <TodoForm addTodo={addTodo} />
-      <TodoList todoList={todoList} deleteItem={deleteItem} />
+      <TodoList
+        todoList={todoList}
+        deleteItem={deleteItem}
+        toggleTodo={toggleTodo}
+      />
     </div>
   );
 }

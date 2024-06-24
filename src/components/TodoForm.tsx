@@ -13,7 +13,7 @@ const TodoForm = ({ addTodo }: TodoFormProps) => {
   return (
     <form onSubmit={formHandler}>
       <input
-      className="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+      className="bg-gray-200 appearance-none border-2 border-gray-200 rounded mx-4  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
         onChange={(e) => setText(e.target.value)}
         type="text"
         value={text}
