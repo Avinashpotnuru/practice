@@ -49,6 +49,7 @@ function App() {
         todoList={todoList}
         deleteItem={deleteItem}
         toggleTodo={toggleTodo}
+        setTodos={setTodos}
       />
     </div>
   );
